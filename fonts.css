@@ -1,0 +1,15 @@
+@font-face {
+	font-family: "Florisel";
+	font-weight: 400;
+	src: local("florisel"),
+		url("/src/fonts/florisel/florisel.woff") format("woff"),
+		url("/src/fonts/florisel/florisel.ttf") format("ttf");
+}
+
+@font-face {
+	font-family: "Klukva";
+	font-weight: 400;
+	src: local("florisel"),
+		url("/src/fonts/klukva/klukva.woff") format("woff"),
+		url("/src/fonts/klukva/klukva.ttf") format("ttf");
+}
