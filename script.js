@@ -2,12 +2,13 @@ const burgerBtn = document.querySelector('.burger__btn')
 const burgerClose = document.querySelector('.burger__close')
 const burgerMenu = document.querySelector('.burger__menu')
 const burgerOverlay = document.querySelector('.burger__overlay')
-const colorsWrapper = document.querySelector('.colors__wrapper')
+const colorsWrapperMan = document.querySelector('.colors__wrapper.man')
+const colorsWrapperWoman = document.querySelector('.colors__wrapper.woman')
 const merryedTimer = document.querySelector('.merryed__timer')
 const mapBtn = document.querySelector('.map__btn')
 const mapWrapper = document.querySelector('.map__wrapper')
 
-import colors from './file.js'
+import colors from './colors.js'
 
 burgerBtn.addEventListener('click', () => {
 	burgerMenu.classList.add('active')
@@ -34,16 +35,17 @@ mapBtn.addEventListener('click', () => {
 	mapBtn.children[0].innerHTML = 'Скрыть карту'
 })
 
-const creareColors = () => {
-	colors.forEach((color) => {
+const creareColors = (array,wrapper) => {
+	array.forEach((color) => {
 		const div = document.createElement('div')
-		div.className = 'colors__item'
+		div.className = 'colors__color'
 		div.style.background = color
-		colorsWrapper.insertAdjacentElement('beforeend', div)
+		wrapper.insertAdjacentElement('beforeend', div)
 	})
 }
 
-creareColors()
+creareColors(colors.man, colorsWrapperMan)
+creareColors(colors.woman, colorsWrapperWoman)
 
 const prepareTime = (time) => {
 	if (time < 10) return `0${time}`
@@ -51,8 +53,7 @@ const prepareTime = (time) => {
 }
 
 
-const getTime = () => {
-	setInterval(() => {
+const updateTime = () => {
 	const currentTime = new Date().getTime()
 	const endTime = new Date('2024-08-10').getTime()
 	const diff = (endTime - currentTime) / 1000
@@ -64,10 +65,7 @@ const getTime = () => {
 
 	const time = `${days} : ${hours} : ${minutes} : ${seconds}`
 	merryedTimer.innerHTML= time
-	}, 1000)
-
 }
 
+setInterval(updateTime, 1000)
 
-
-getTime()
