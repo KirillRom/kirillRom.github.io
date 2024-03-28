@@ -4,6 +4,11 @@
 	box-sizing: border-box;
 }
 
+html {
+	scroll-behavior: smooth;
+	scroll-padding-top: 110px;
+}
+
 body {
 	margin: 0;
 	padding: 0;
@@ -64,7 +69,7 @@ h2 {
 }
 
 .names__sub {
-	font-size: 100px;
+	font-size: 90px;
 }
 
 .description {
@@ -301,7 +306,6 @@ header {
 /* MAP */
 .info-block.map {
 	max-width: 100%;
-	gap: 40px;
 }
 
 .map__wrapper {
@@ -318,6 +322,7 @@ header {
 	align-items: center;
 	gap: 10px;
 	font-size: 20px;
+	margin-top: 20px;
 	padding: 15px 25px;
 	border-radius: 35px;
 	border: 1px solid #cfcfcf;
@@ -392,4 +397,62 @@ header {
 .contact__item img {
 	width: 30px;
 	height: 30px;
+}
+
+.info-block.end {
+	max-width: 100%;
+}
+
+.info-block.end h2 {
+	word-spacing: 20px;
+	font-size: 100px;
+}
+
+@media (max-width: 765px) {
+	.names__main {
+		font-size: 75px;
+	}
+
+	.names__sub {
+		font-size: 70px;
+	}
+
+	h2 {
+		font-size: 50px;
+	}
+
+	.info-block {
+		gap: 10px;
+		margin-bottom: 30px
+	}
+
+	.description {
+		font-size: 20px;
+	}
+
+	.merryed__timer {
+		font-size: 55px;
+	}
+
+	.info-block.end h2 {
+		font-size: 55px;
+		word-spacing: 5px;
+	}
+
+	.plan__wrapper {
+		margin-top: 20px;
+	}
+
+	.plan__item {
+		margin-bottom: 55px;
+	}
+
+	.map__btn {
+		font-size: 16px;
+		padding: 10px 15px;
+	}
+
+	.contact__wrapper {
+		gap: 15px;
+	}
 }
