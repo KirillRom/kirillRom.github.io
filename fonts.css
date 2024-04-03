@@ -13,3 +13,18 @@
 		url("/src/fonts/klukva/klukva.woff") format("woff"),
 		url("/src/fonts/klukva/klukva.ttf") format("ttf");
 }
+
+@font-face {
+	font-family: "SourceSerif";
+	font-weight: 100;
+	src: local("florisel"),
+		url("/src/fonts/sourceSerif/sourceSerif.woff") format("woff"),
+		url("/src/fonts/sourceSerif/sourceSerif.ttf") format("ttf");
+}
+
+@font-face {
+	font-family: "SourceSerif";
+	src: local("florisel"),
+		url("/src/fonts/sourceSerif/sourceSerif_Light.woff") format("woff"),
+		url("/src/fonts/sourceSerif/sourceSerif_Light.ttf") format("ttf");
+}

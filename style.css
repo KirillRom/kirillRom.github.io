@@ -43,6 +43,7 @@ li {
 button {
 	border: inherit;
 	background: inherit;
+	color: inherit;
 }
 
 h2 {
@@ -57,11 +58,35 @@ h2 {
 	margin: 0 auto;
 }
 
+.invite-text {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 60px;
+}
+
+.invite-text__main {
+	position: relative;
+	font-size: 75px;
+	letter-spacing: 6px;
+	font-family: 'SourceSerif';
+}
+
+.invite-text__sub {
+	position: absolute;
+	top: 90%;
+	transform: rotate(-15deg);
+	right: 0;
+	font-family: 'Florisel';
+	letter-spacing: normal;
+	font-size: 40px;
+}
+
 .names {
 	display: flex;
 	flex-direction: column;
 	font-family: 'Florisel';
-	margin-bottom: 80px;
+	margin-bottom: 10px;
+	line-height: 1.65;
 }
 
 .names__main {
@@ -69,7 +94,7 @@ h2 {
 }
 
 .names__sub {
-	font-size: 90px;
+	font-size: 70px;
 }
 
 .description {
@@ -77,8 +102,16 @@ h2 {
 }
 
 main {
-	margin-top: 200px;
+	margin-top: 135px;
 	text-align: center;
+}
+
+.main-photo {
+	width: 600px;
+	max-width: 100%;
+	border: 1px solid #cfcfcf;
+	border-radius: 15px;
+	margin-bottom: 40px;
 }
 
 .separator {
@@ -259,7 +292,8 @@ header {
 	margin-bottom: 80px;
 	gap: 80px;
 }
-.plan__item:last-child{
+
+.plan__item:last-child {
 	margin-bottom: 0px;
 }
 
@@ -324,6 +358,9 @@ header {
 
 .map__wrapper {
 	display: none;
+	border: 1px solid #cfcfcf;
+	overflow: hidden;
+	border-radius: 10px;
 }
 
 .map__wrapper.active {
@@ -390,6 +427,7 @@ header {
 	gap: 15px;
 	font-size: 22px;
 }
+
 .colors__title {
 	font-weight: 700;
 	font-size: 30px;
@@ -436,6 +474,12 @@ header {
 }
 
 @media (max-width: 765px) {
+	.invite-text__main {
+		font-size: 55px;
+	}
+	.invite-text__sub {
+		font-size: 35px;
+	}
 	.names__main {
 		font-size: 75px;
 	}
@@ -481,5 +525,21 @@ header {
 
 	.contact__wrapper {
 		gap: 15px;
+	}
+}
+
+@media (max-width:475px) {
+	.invite-text__main {
+		font-size: 35px;
+	}
+	.invite-text__sub {
+		font-size: 28px;
+	}
+	.names__main {
+		font-size: 55px;
+	}
+
+	.names__sub {
+		font-size: 45px;
 	}
 }
