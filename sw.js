@@ -3,10 +3,10 @@ const CACHE_NAME = 'static-cache';
 const DYNAMIC_CACHE_NAME = 'dynamic-cache';
 
 const urlsToCache = [
-  './main.js',
-  './style.css',
-  './index.html',
-  './404.html',
+  '/main.js',
+  '/style.css',
+  '/index.html',
+  '/404.html',
 ];
 
 self.addEventListener('install', async () => {
@@ -20,16 +20,17 @@ self.addEventListener('install', async () => {
 });
 
 self.addEventListener('activate', async (event) => {
-	const cacheKeys = await caches.keys()
-	const cacheWhitelist = [CACHE_NAME, DYNAMIC_CACHE_NAME]; // Список кэшей, которые нужно оставить
+	console.log('Service Worker activated');
+	// const cacheKeys = await caches.keys()
+	// const cacheWhitelist = [CACHE_NAME, DYNAMIC_CACHE_NAME]; // Список кэшей, которые нужно оставить
 
-    await Promise.all(
-        cacheKeys.map(cacheName => {
-            if (!cacheWhitelist.includes(cacheName)) {
-                return caches.delete(cacheName); // Удаляем кэш, если он не в whitelist
-            }
-        })
-    );
+    // await Promise.all(
+    //     cacheKeys.map(cacheName => {
+    //         if (!cacheWhitelist.includes(cacheName)) {
+    //             return caches.delete(cacheName); // Удаляем кэш, если он не в whitelist
+    //         }
+    //     })
+    // );
 
 });
 
