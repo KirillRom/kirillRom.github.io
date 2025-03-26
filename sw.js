@@ -3,6 +3,7 @@ const CACHE_NAME = 'static-cache';
 const DYNAMIC_CACHE_NAME = 'dynamic-cache';
 
 const urlsToCache = [
+'/',
   '/main.js',
   '/style.css',
   '/index.html',
