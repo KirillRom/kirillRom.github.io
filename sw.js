@@ -21,23 +21,22 @@ self.addEventListener('install', async () => {
 });
 
 self.addEventListener('activate', async (event) => {
-	console.log('Service Worker activated');
-	// const cacheKeys = await caches.keys()
-	// const cacheWhitelist = [CACHE_NAME, DYNAMIC_CACHE_NAME]; // Список кэшей, которые нужно оставить
+	const cacheKeys = await caches.keys()
+	const cacheWhitelist = [CACHE_NAME, DYNAMIC_CACHE_NAME]; // Список кэшей, которые нужно оставить
 
-    // await Promise.all(
-    //     cacheKeys.map(cacheName => {
-    //         if (!cacheWhitelist.includes(cacheName)) {
-    //             return caches.delete(cacheName); // Удаляем кэш, если он не в whitelist
-    //         }
-    //     })
-    // );
+    await Promise.all(
+        cacheKeys.map(cacheName => {
+            if (!cacheWhitelist.includes(cacheName)) {
+                return caches.delete(cacheName); // Удаляем кэш, если он не в whitelist
+            }
+        })
+    );
 
 });
 
 self.addEventListener('fetch', async (event) => {
     const url = new URL(event.request.url);
-	console.log('Fetch event:');
+	console.log('Fetch event:', url.origin, location.origin );
 
     try {
         if (url.origin === location.origin) {
